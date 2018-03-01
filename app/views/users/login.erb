@@ -1,1 +1,18 @@
-<h1> hello from paiges login </h1>
+    <div>
+      <div>
+        <h3>Enter your credentials to login</h3>
+        <form action="/login" method="post">
+          <label for="username">Username: </label>
+          <input type="text" name="user[username]" id="username" />
+
+          <br/><br />
+
+          <label for="password">Password: </label>
+          <input type="password" name="user[password]" id="password" />
+
+          <br /><br />
+
+          <input type="submit" id="submit" value="Log In" />
+        </form>
+      </div>
+    </div>
