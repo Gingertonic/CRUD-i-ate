@@ -1,10 +1,22 @@
 <html>
     <head>
+       <link rel="stylesheet" href="/css/stylesheet.css">
        <title>Gross Things I Ate When I Was Alone</title>
     </head>
 
       <body>
         <div>
+          <h1>Gross Things I Ate When I Was Alone</h1>
+          <p>A Place For Bearing Your Most Shameful Food Indulgences</p>
+          <img src="<%= url("/img/brunette.jpg")%>">
         </div>
+        <div>
+                  <% if !logged_in? %>
+                    <a href="/signup">Sign Up</a> <a href="/login">Log In</a>
+                  <% else %>
+                    <a href="/posts/new">Add New Post</a><a href="/logout">Log Out</a>
+                  <% end %>
+                </div>
       </body>
+
 </html>
