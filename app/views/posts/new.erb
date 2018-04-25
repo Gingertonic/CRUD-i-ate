@@ -1,1 +1,33 @@
-<h1> hello from paiges new </h1>
+<div class="column middle">
+    <form action="/posts" method="post">
+      <h3>Please fill in all the fields</h3>
+      <label for="title">Title: </label>
+      <input type="text" name="post[title]" id="title" />
+
+      <br /><br />
+
+      <label for="date">Date: </label>
+      <input type="date" name="post[date]" id="date" />
+
+      <br /><br />
+
+      <label for="category">Category: </label>
+      <select name="post[category]" id="category">
+        <% Post.default_categories.each do |category| %>
+        <option value="<%= category %>"><%= category.titleize %></option>
+        <% end %>
+      </select>
+
+      <br /><br />
+
+      <label for="description">Description</label><br />
+      <textarea name="post[description]" id="description" cols="50" rows="10"></textarea>
+
+      <input type="hidden" name="post[user_id]" id="user_id" value="<%= @user.id %>" />
+
+      <br /><br />
+
+      <input type="submit" value="Create New Entry"/>
+
+    </form>
+  </div>

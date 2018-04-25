@@ -1,18 +1,17 @@
 source 'http://rubygems.org'
 
+gem 'sinatra'
 gem 'activerecord', :require => 'active_record'
-gem 'bcrypt'
-gem 'pry'
-gem 'rack'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'rake'
 gem 'require_all'
-gem 'sinatra'
-gem 'sinatra-flash'
-gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
-gem 'shotgun'
 gem 'sqlite3'
 gem 'thin'
-gem 'tux'
+gem 'shotgun'
+gem 'pry'
+gem 'bcrypt'
+gem "tux"
+gem 'sinatra-flash'
 
 # may not use these but adding just in case
 group :test do

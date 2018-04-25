@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
    post '/signup' do
     if blank_params?("user")
-      flash[:signup_error] = "Uhoh! You left some fields empty. Please fill in all fields."
+      flash[:signup_error] = "Uh oh! You left some fields empty. Please fill in all fields."
       redirect to '/signup'
     else
       flash[:signup_success] = "Thanks for signing up!"

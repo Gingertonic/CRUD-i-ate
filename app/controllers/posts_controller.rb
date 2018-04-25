@@ -16,7 +16,7 @@ class PostsController < ApplicationController
       flash[:new_error] = "One or more fields were left empty. Please fill in all fields."
       redirect to '/posts/new'
     else
-      flash[:new_success] = "Your post has been added to the list."
+      flash[:new_success] = "Your entry has been added to the list."
       @post = Post.create(params[:post])
       redirect to "/posts/#{@post.slug}"
     end
@@ -37,13 +37,12 @@ class PostsController < ApplicationController
       @post = Post.find_by_slug(params[:slug])
 
       if !logged_in?
-        flash[:not_logged_in_edit] = "You need to login to edit posts"
-        redirect to "/login"
+        flash[:not_logged_in_edit] = "You need to login to edit entries"
       elsif @post.user_id == current_user.id
-        flash[:edit_success] = "Thanks for updating this post"
+        flash[:edit_success] = "Thanks for updating this entry"
         erb :'/posts/edit'
       else
-        flash[:edit_error] = "You are only able to edit your own posts"
+        flash[:edit_error] = "You are only able to edit your own entries"
         redirect to "/posts/#{@post.slug}"
       end
     end
@@ -56,7 +55,7 @@ class PostsController < ApplicationController
         redirect to "/posts/#{@post.slug}/edit"
       else
         @post.update(params[:post])
-        flash[:update_success] = "This post has been updated!"
+        flash[:update_success] = "This entry has been updated!"
         redirect to "/posts/#{@post.slug}"
       end
     end
@@ -66,14 +65,14 @@ class PostsController < ApplicationController
       @post = Post.find_by_slug(params[:slug])
 
       if !logged_in?
-        flash[:not_logged_in_delete] = "You need to login to delete posts"
+        flash[:not_logged_in_delete] = "You need to login to delete entries"
         redirect to "/login"
       elsif @post.user_id == current_user.id
-        flash[:delete_success] = "This post has been deleted"
+        flash[:delete_success] = "This entry has been deleted"
         @activity.destroy
         redirect to "/posts"
       else
-        flash[:delete_error] = "You are only able to delete your own posts"
+        flash[:delete_error] = "You are only able to delete your own entries"
         redirect to "/posts/#{@post.slug}"
       end
     end

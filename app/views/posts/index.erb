@@ -1,9 +1,22 @@
+<h4>hello from index page</h4>
+<div class="column middle">
 <% @posts.each do |post| %>
+      <div>
+        <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+      </div>
 
-<h1> hello from paiges index </h1>
+      <div class="date">
+        <%= post.date.strftime('%A, %b %d, %Y') %>
+      </div>
+      <div class="date">
+        <%= post.category.titleize %>
+      </div>
 
-<a href="/posts/<%= post.slug %>"><%= post.title %></a>
-<%= post.date.strftime('%A, %b %d, %Y') %>
-<%= post.category %>
-<%= post.description %>
+      <div class="content">
+        <p>
+        <%= post.description %>
+      </p>
+      </div>
+  <br />
 <% end %>
+</div>

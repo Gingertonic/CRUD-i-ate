@@ -1,1 +1,25 @@
 <h1> hello from paiges show </h1>
+
+<div>
+  <div class="column middle">
+
+    <a href="/"> Back to Entry List</a>
+
+    <h3><%= @post.title %> - <%= @post.date.strftime('%A, %b %d, %Y') %> - <%= @post.category.titleize %></h3>
+    <p><%= @post.description %></p>
+  </div>
+
+  <br /><br />
+
+  <div class="column middle">
+    <a href="/posts/<%= @post.slug %>/edit" style="float: center;">
+      <input type="hidden" name="_method" value="Edit" />
+      <input type="button" value="Edit">
+    </a>
+
+    <form action="/posts/<%= @post.slug %>" method="post" style="float: center;">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Delete" />
+    </form>
+  </div>
+</div>

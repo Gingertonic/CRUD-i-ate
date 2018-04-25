@@ -6,7 +6,9 @@ belongs_to :user
   "funny",
   "kids",
   "gluttany",
-  "moldy"
+  "moldy",
+  "sneaky",
+  "gross"
 ]
 
 def slug
