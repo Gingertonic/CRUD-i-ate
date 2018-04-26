@@ -1,9 +1,7 @@
-
 body, h4 {
     margin: 0;
 }
 
-/*NAVBAR STYLING*/
 #navbar {
     display: grid;
     place-items: center;
@@ -25,7 +23,6 @@ body {
 }
 
 h4 {
-  /*text-align: center;*/
   font-family: 'Pacifico', Arial, sans-serif;
   font-size: 40px;
   font-weight: bold;
@@ -46,7 +43,7 @@ p {
   font-family: 'Poiret One';
   font-size: 20px;
   color: #black;
-  /*padding-left: 30px;*/
+
 }
 
 img {
@@ -102,7 +99,7 @@ a, input[type="submit"] {
   font-weight: bold;
   font-size: 12px;
   text-decoration: none;
-  padding: 12px 20px; /* this creates the oval shaped button */
+  padding: 12px 20px;
   border-radius: 100px;
   transition: background-color 200ms ease-in-out;
   letter-spacing: 0.05em;
