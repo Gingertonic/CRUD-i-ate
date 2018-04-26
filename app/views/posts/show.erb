@@ -1,5 +1,3 @@
-<h1> hello from paiges show </h1>
-
 <div>
   <div class="column middle">
 
@@ -14,7 +12,7 @@
   <div class="column middle">
     <a href="/posts/<%= @post.slug %>/edit" style="float: center;">
       <input type="hidden" name="_method" value="Edit" />
-      <input type="button" value="Edit">
+      <input type="submit" value="Edit" />
     </a>
 
     <form action="/posts/<%= @post.slug %>" method="post" style="float: center;">

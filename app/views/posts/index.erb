@@ -1,5 +1,5 @@
-<h4>hello from index page</h4>
 <div class="column middle">
+<div>
 <% @posts.each do |post| %>
       <div>
         <a href="/posts/<%= post.slug %>"><%= post.title %></a>
@@ -19,4 +19,5 @@
       </div>
   <br />
 <% end %>
+</div>
 </div>
