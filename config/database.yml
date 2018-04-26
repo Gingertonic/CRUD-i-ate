@@ -1,7 +1,11 @@
 development:
   adapter: sqlite3
-  database: db/development.sqlite
-  host: localhost
-  pool: 5
-  timeout: 5000
-  
+  database: database.db
+
+test:
+  adapter: sqlite3
+  database: database.db
+
+production:
+  adapter: postgresql
+  database: sch_database mydb
